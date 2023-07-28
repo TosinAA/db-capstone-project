@@ -12,13 +12,14 @@ BEGIN
 		INSERT INTO Bookings (BookingID, CustomerID, BookingDate, TableNumber)
 		VALUES(Booking_ID, Customer_ID, Booking_Date, Table_Number);
 		COMMIT;
-		SELECT CONCAT('New Booking Added at Table Number ', Table_Number) As Confirmation;
 	END IF;
 END $$
 DELIMITER ;
 
 -- Testing the code
 CALL AddBooking(11, 2, "2022-12-29", 1);
+
+DROP PROCEDURE AddBooking;
 
 
 
